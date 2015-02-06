@@ -6,6 +6,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	float moveForce = 60.0f;
 	bool ground = true;
 	RaycastHit2D hit;
+	public static Vector3 pos;
 	
 	// Use this for initialization
 	void Start () {
@@ -27,6 +28,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		if(Input.GetKey(KeyCode.D)){
 			gameObject.rigidbody2D.AddForce(new Vector2(moveForce,0.0f));
 		}
+		pos = transform.position;
 	}
 
 	void OnCollisionEnter2D(){

@@ -15,6 +15,7 @@ public class GunAngle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Angle the gun from -90 to 90 degrees, mirroring on either side
+
 		var dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - PlayerMovementScript.pos;
 		angle = Mathf.Atan2(dir.y, dir.x);
 		if(angle<0){
@@ -24,6 +25,7 @@ public class GunAngle : MonoBehaviour {
 		}
 		transform.rotation = Quaternion.AngleAxis(angle*Mathf.Rad2Deg, Vector3.forward);
 		transform.localPosition = new Vector2(0.1f*Mathf.Cos (angle),0.1f*Mathf.Sin (angle));
+
 		if(angle>Mathf.PI/2 && angle<Mathf.PI*3/2 && !flipped){
 			scale.y *= -1;
 			transform.localScale = scale;
