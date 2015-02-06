@@ -5,8 +5,8 @@ public class Shot : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		transform.LookAt(new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,Camera.main.ScreenToWorldPoint(Input.mousePosition).y,transform.position.z));
-		transform.rigidbody2D.AddForce(transform.right*50);
+		transform.rotation = Quaternion.Euler (0,0,Mathf.Atan2 (Camera.main.ScreenToWorldPoint(Input.mousePosition).y-transform.position.y,Camera.main.ScreenToWorldPoint(Input.mousePosition).x-transform.position.x)*Mathf.Rad2Deg-90);
+		transform.rigidbody2D.AddForce(transform.right*PlayerShoot.shotForce);
 	}
 	
 	// Update is called once per frame
