@@ -1,19 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMovementScript : MonoBehaviour {
+public class PlayerMove : MonoBehaviour {
 
-	float moveForce = 60.0f;
-	bool ground = true;
+	float moveForce = 60.0f; // Movement is currently based on pushing a rigidbody around
+	bool ground = true; // Can only jump after touching object beneath you
 	RaycastHit2D hit;
 	public static Vector3 pos;
 	
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update () {
 		if(Input.GetKey(KeyCode.W) && ground){
 			gameObject.rigidbody2D.AddForce(new Vector2(0.0f,30.0f*moveForce));
@@ -31,7 +25,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		pos = transform.position;
 	}
 
-	void OnCollisionEnter2D(){
+	void OnCollisionEnter2D(){ //For detecting the ground for jumping
 		collider2D.enabled = false;
 		hit = Physics2D.Raycast (transform.position, -Vector2.up,0.5f);
 		if(hit.rigidbody != null){
