@@ -25,12 +25,17 @@ public class PlayerMove : MonoBehaviour {
 		pos = transform.position;
 	}
 
-	void OnCollisionEnter2D(){ //For detecting the ground for jumping
-		collider2D.enabled = false;
-		hit = Physics2D.Raycast (transform.position, -Vector2.up,0.5f);
-		if(hit.rigidbody != null){
-			ground = true;
+	void OnCollisionEnter2D(Collision2D hitBy){ //For detecting the ground for jumping and if enemy hits player
+		if(hitBy.gameObject.tag == "enemy"){ // detect if collision was from an enemy
+			Debug.Log ("DEAD");  // if yes, kill the player
+		}else{
+
+			collider2D.enabled = false;
+			hit = Physics2D.Raycast (transform.position, -Vector2.up,0.5f);
+			if(hit.rigidbody != null){
+				ground = true;
+			}
+			collider2D.enabled = true;
 		}
-		collider2D.enabled = true;
 	}
 }
