@@ -4,22 +4,23 @@ using System.Collections;
 public class PlayerShoot : MonoBehaviour {
 
 	int ammo = 100;
-	int clip = 10; // Keeps track of the current clip
+	int clip = 30; // Keeps track of the current clip
 	int clipSize = 30;
 	float shotSpeed = 0.05f; // Seconds between shots
 	float reloadSpeed = 2.0f;
 	bool busy = false; // For allowing shooting or reloading based on relevent time delays.
 	public GameObject shot; // The projectile
-	public static int shotForce = 1000;
+	public static int shotForce = 1500;
 	public static float recoil = 0.0f;
 	float shakeDist = 0.0f;
 	float camAng = 0.0f;
 	bool screenShake = false;
+	float spread = 0.5f;
 	
 	void Update () {
 		if(Input.GetMouseButtonDown(0)){ //Mouse 1 to shoot. Mouse 2 for alt-firemode? Consult design team.
 			if(clip >= 1 && !busy){
-				Instantiate (shot, new Vector2(0.4f*Mathf.Cos(GunTransforms.angle)+transform.position.x,0.4f*Mathf.Sin(GunTransforms.angle)+transform.position.y),Quaternion.identity);
+				Instantiate (shot, new Vector2(0.4f*Mathf.Cos(GunTransforms.angle+Random.Range(-spread,spread))+transform.position.x,0.4f*Mathf.Sin(GunTransforms.angle+Random.Range(-spread,spread))+transform.position.y),Quaternion.identity);
 				clip -= 1;
 				StartCoroutine(BusyCheck(shotSpeed));
 				shakeDist = 0.2f;

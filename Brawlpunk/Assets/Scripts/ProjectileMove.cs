@@ -10,9 +10,14 @@ public class ProjectileMove : MonoBehaviour {
 		transform.rigidbody2D.AddForce(transform.right*PlayerShoot.shotForce);
 	}
 
-	// once a shot has hit something its tag is changed to "shot" to imply that it is no longer live
-	void OnCollisionEnter2D(Collision2D hit){
-		this.gameObject.tag = "shot";
+	void OnCollisionEnter2D(){
+		StartCoroutine(Despawn(0.05f));
+	}
+
+	// we don't need bullets piling up everywhere, but instant despawn doesn't allow for reliable hit detection
+	IEnumerator Despawn(float delay){
+		yield return new WaitForSeconds(delay);
+		Destroy(gameObject);
 	}
 	
 }
