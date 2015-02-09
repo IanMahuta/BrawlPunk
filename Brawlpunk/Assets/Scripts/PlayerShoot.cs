@@ -61,6 +61,8 @@ public class PlayerShoot : MonoBehaviour {
 	void OnGUI(){
 		if(busy){ //Want to change it to display when reloading. Consult design team to see what the plan for that is.
 			DrawQuad(new Rect(Screen.width/2-25,Screen.height/2-80,50,20),new Color (0.0f, 0.0f, 0.0f, 1.0f),"BUSY");
+		}else{
+			DrawQuad(new Rect(Screen.width/2-25,Screen.height/2-80,50,20),new Color (0.0f, 0.0f, 0.0f, 1.0f),clip + "/" + clipSize);
 		}
 	}
 
