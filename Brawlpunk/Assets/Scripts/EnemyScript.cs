@@ -12,8 +12,8 @@ public class EnemyScript : MonoBehaviour {
 	// Move the enemy
 	void Update () {
 		timeSinceMove = Time.deltaTime;
-		//transform.position = transform.position + new Vector3 (speed*timeSinceMove, 0, 0); 
-		transform.rigidbody2D.AddForce(new Vector2(speed*(PlayerMove.pos.x-transform.position.x)/(PlayerMove.pos-transform.position).magnitude,0.0f));
+		transform.position = transform.position + new Vector3 (speed*timeSinceMove, 0, 0); 
+		//transform.rigidbody2D.AddForce(new Vector2(speed*(PlayerMove.pos.x-transform.position.x)/(PlayerMove.pos-transform.position).magnitude,0.0f));
 	}
 
 	// detect if the enemy was hit by a live shot or not

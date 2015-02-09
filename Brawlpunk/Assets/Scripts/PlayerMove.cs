@@ -3,26 +3,25 @@ using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
 
-	float moveForce = 60.0f; // Movement is currently based on pushing a rigidbody around
+	float moveForce = 1.0f; // Movement is currently based on pushing a rigidbody around
 	bool ground = true; // Can only jump after touching object beneath you
 	RaycastHit2D hit;
 	public static Vector3 pos;
 	
 	void Update () {
-		if(Input.GetKey(KeyCode.W) && ground){
-			gameObject.rigidbody2D.AddForce(new Vector2(0.0f,30.0f*moveForce));
-			ground = false;
+		if(Input.GetKey(KeyCode.W)){
+			transform.position = transform.position + new Vector3(0,moveForce,0);
 		}
 		if(Input.GetKey(KeyCode.A)){
-			gameObject.rigidbody2D.AddForce(new Vector2(-moveForce,0.0f));
+			transform.position= transform.position + new Vector3(-moveForce,0,0);
 		}
 		if(Input.GetKey(KeyCode.S)){
-			gameObject.rigidbody2D.AddForce(new Vector2(0.0f,-moveForce));
+			transform.position = transform.position + new Vector3(0,-moveForce,0);
 		}	
 		if(Input.GetKey(KeyCode.D)){
-			gameObject.rigidbody2D.AddForce(new Vector2(moveForce,0.0f));
+			transform.position= transform.position + new Vector3(moveForce,0,0);
 		}
-		pos = transform.position;
+		//pos = transform.position;
 	}
 
 	void OnCollisionEnter2D(Collision2D hitBy){ //For detecting the ground for jumping and if enemy hits player
