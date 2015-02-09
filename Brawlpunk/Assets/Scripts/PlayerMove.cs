@@ -7,7 +7,12 @@ public class PlayerMove : MonoBehaviour {
 	bool ground = true; // Can only jump after touching object beneath you
 	RaycastHit2D hit;
 	public static Vector3 pos;
-	
+	PlayerHealthScript healthScript;  
+
+	void Start(){
+		healthScript = this.gameObject.GetComponent<PlayerHealthScript>();
+	}
+
 	void Update () {
 		if(Input.GetKey(KeyCode.W) && ground){
 			gameObject.rigidbody2D.AddForce(new Vector2(0.0f,30.0f*moveForce));
@@ -27,7 +32,7 @@ public class PlayerMove : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D hitBy){ //For detecting the ground for jumping and if enemy hits player
 		if(hitBy.gameObject.tag == "enemy"){ // detect if collision was from an enemy
-			Debug.Log ("DEAD");  // if yes, kill the player
+			healthScript.playerHit(hitBy.gameObject.GetComponent<EnemyScript>().damage);
 		}else{
 
 			collider2D.enabled = false;

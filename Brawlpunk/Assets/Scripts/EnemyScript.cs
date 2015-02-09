@@ -6,6 +6,7 @@ public class EnemyScript : MonoBehaviour {
 	public float speed = 4.0f;  //distance that the enemy moves every second
 	float timeSinceMove = 0;
 	GameObject player;
+	public int damage = 10;
 
 	void Start(){
 		player = GameObject.Find ("player");
