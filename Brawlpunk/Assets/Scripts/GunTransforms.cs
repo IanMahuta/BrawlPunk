@@ -11,7 +11,7 @@ public class GunTransforms : MonoBehaviour {
 		scale = transform.localScale;
 	}
 	
-	void Update () {
+	void FixedUpdate () {
 		//Angle the gun from -90 to 90 degrees, mirroring on either side
 
 		var dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - PlayerMove.pos;
