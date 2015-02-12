@@ -17,7 +17,7 @@ public class PlayerShoot : MonoBehaviour {
 	float camAng = 0.0f;
 	bool screenShake = false;
 	
-	void Update () {
+	void FixedUpdate () {
 		if(Input.GetMouseButtonDown(0)){ //Mouse 1 to shoot. Mouse 2 for alt-firemode? Consult design team.
 			if(clip >= 1 && !busy){
 				Instantiate (shot, new Vector2(0.4f*Mathf.Cos(GunTransforms.angle)+transform.position.x,0.4f*Mathf.Sin(GunTransforms.angle)+transform.position.y),Quaternion.identity);
@@ -36,7 +36,7 @@ public class PlayerShoot : MonoBehaviour {
 			}
 		}
 
-		// The juiciest of screen shakes 
+		// Manual screen shake for recoilless weapons
 		if(Mathf.Abs(shakeDist)>0.1f && screenShake){
 			Camera.main.transform.position = new Vector3(shakeDist*Mathf.Cos(camAng)+transform.position.x,shakeDist*Mathf.Sin(camAng)+transform.position.y,-10.0f);
 			shakeDist *= -0.5f;
