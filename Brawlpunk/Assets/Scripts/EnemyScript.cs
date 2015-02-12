@@ -8,6 +8,7 @@ public class EnemyScript : MonoBehaviour {
 	float health = 3.0f;
 	float initHealth = 3.0f;
 	Vector3 barPosition = new Vector3(0.0f,0.0f,0.0f);
+	float damage = 20.0f; //damage the enemy does to the player on attack
 
 	// Move the enemy
 	void Update () {
@@ -23,6 +24,8 @@ public class EnemyScript : MonoBehaviour {
 			if(health < 1){
 				Destroy (gameObject);
 			}
+		}else if(hitBy.gameObject.tag=="Player"){
+			HealthController.P1Health -= damage;
 		}
 	}
 

@@ -22,10 +22,4 @@ public class PlayerMove : MonoBehaviour {
 		}
 		pos = transform.position;
 	}
-
-	void OnCollisionEnter2D(Collision2D hitBy){ //For detecting the ground for jumping and if enemy hits player
-		if(hitBy.gameObject.tag == "enemy"){ // detect if collision was from an enemy
-			Debug.Log ("DEAD");  // if yes, kill the player
-		}
-	}
 }
