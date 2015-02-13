@@ -32,7 +32,9 @@ public class HealthController : MonoBehaviour {
 		//for displaying health bars for the players (just for debug(?))
 		barPosition = Camera.main.WorldToScreenPoint(PlayerMove.pos);
 		DrawQuad(new Rect(barPosition.x-20,Screen.height-barPosition.y-45,40,10),new Color (1.0f, 0.0f, 0.0f, 1.0f),"");
-		DrawQuad(new Rect(barPosition.x-20,Screen.height-barPosition.y-45,Mathf.RoundToInt(40*P1Health/P1InitHealth),10),new Color (0.0f, 1.0f, 0.0f, 1.0f),"");
+		if(P1Health > 0){
+			DrawQuad(new Rect(barPosition.x-20,Screen.height-barPosition.y-45,Mathf.RoundToInt(40*P1Health/P1InitHealth),10),new Color (0.0f, 1.0f, 0.0f, 1.0f),"");
+		}
 	}
 
 	void DrawQuad(Rect position, Color color, string strng) {
