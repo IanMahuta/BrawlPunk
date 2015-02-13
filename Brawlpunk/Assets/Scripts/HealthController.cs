@@ -20,6 +20,7 @@ public class HealthController : MonoBehaviour {
 			if(P1Lives > 0){
 				P1Lives--;
 				//And respawn the player
+				P1Health = P1InitHealth;
 			}else{
 				UIController.gamestate = 4; //Tell the UIController (and other controllers) to display a game over screen
 			}
