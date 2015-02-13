@@ -16,6 +16,7 @@ public class HealthController : MonoBehaviour {
 	
 	void FixedUpdate () {
 		if(P1Health <= 0){
+			P1Health = 0;
 			//Destroy(PlayerOne.gameObject); //Or some sort of death animation
 			if(P1Lives > 0){
 				P1Lives--;

@@ -10,7 +10,7 @@ public class PlayerShoot : MonoBehaviour {
 	float reloadSpeed = 2.0f;
 	bool busy = false; // For allowing shooting or reloading based on relevent time delays.
 	public GameObject shot; // The projectile
-	public static int shotForce = 1500;
+	public static float shotForce = 0.6f;
 	public static float spread = 0.1f;
 	public static float recoil = 0.0f;
 	float shakeDist = 0.2f;
