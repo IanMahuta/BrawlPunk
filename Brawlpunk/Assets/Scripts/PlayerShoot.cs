@@ -13,9 +13,6 @@ public class PlayerShoot : MonoBehaviour {
 	public static float shotForce = 0.6f;
 	public static float spread = 0.1f;
 	public static float recoil = 0.0f;
-	float shakeDist = 0.2f;
-	float camAng = 0.0f;
-	bool screenShake = false;
 	
 	void FixedUpdate () {
 		if(Input.GetMouseButtonDown(0)){ //Mouse 1 to shoot. Mouse 2 for alt-firemode? Consult design team.
@@ -23,8 +20,6 @@ public class PlayerShoot : MonoBehaviour {
 				Instantiate (shot, new Vector2(0.4f*Mathf.Cos(GunTransforms.angle)+transform.position.x,0.4f*Mathf.Sin(GunTransforms.angle)+transform.position.y),Quaternion.identity);
 				clip -= 1;
 				StartCoroutine(BusyCheck(shotSpeed));
-				shakeDist = 0.2f;
-				camAng = GunTransforms.angle;
 				recoil = 0.5f;
 			}
 		}
@@ -34,15 +29,6 @@ public class PlayerShoot : MonoBehaviour {
 				clip = clipSize;
 				StartCoroutine(BusyCheck(reloadSpeed));
 			}
-		}
-
-		// Manual screen shake for recoilless weapons
-		if(Mathf.Abs(shakeDist)>0.1f && screenShake){
-			Camera.main.transform.position = new Vector3(shakeDist*Mathf.Cos(camAng)+transform.position.x,shakeDist*Mathf.Sin(camAng)+transform.position.y,-10.0f);
-			shakeDist *= -0.5f;
-		}else{
-			Camera.main.transform.position = new Vector3(transform.position.x,transform.position.y,-10.0f);
-			shakeDist = 0.0f;
 		}
 
 		if(recoil > 0.0f && busy){

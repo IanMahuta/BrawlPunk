@@ -8,10 +8,10 @@ public class GunTransforms : MonoBehaviour {
 	Vector3 scale;
 
 	void Start () {
-		//scale = transform.localScale;
-		angle = 0.0f;
+		scale = transform.localScale;
+		//angle = 0.0f;
 	}
-	/*
+	
 	void FixedUpdate () {
 		//Angle the gun from -90 to 90 degrees, mirroring on either side
 
@@ -40,5 +40,5 @@ public class GunTransforms : MonoBehaviour {
 			flipped = false;
 		}
 	}
-	*/
+	
 }
