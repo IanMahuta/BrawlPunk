@@ -9,6 +9,7 @@ public class PlayerShoot : MonoBehaviour {
 	float shotSpeed = 0.05f; // Seconds between shots
 	float reloadSpeed = 2.0f;
 	bool busy = false; // For allowing shooting or reloading based on relevent time delays.
+	bool rel = false;
 	public GameObject shot; // The projectile
 	public static float shotForce = 0.6f;
 	public static float spread = 0.1f;
@@ -28,6 +29,7 @@ public class PlayerShoot : MonoBehaviour {
 				ammo -= clipSize-clip;
 				clip = clipSize;
 				StartCoroutine(BusyCheck(reloadSpeed));
+				rel = true;
 			}
 		}
 
@@ -42,11 +44,12 @@ public class PlayerShoot : MonoBehaviour {
 		busy = true; //This is where I could use some SE help. I want it to return whether it is reloading or not, not just "busy".
 		yield return new WaitForSeconds(time);
 		busy = false;
+		rel = false;
 	}
 
 	void OnGUI(){
-		if(busy){ //Want to change it to display when reloading. Consult design team to see what the plan for that is.
-			DrawQuad(new Rect(Screen.width/2-25,Screen.height/2-80,50,20),new Color (0.0f, 0.0f, 0.0f, 1.0f),"BUSY");
+		if(rel){ 
+			DrawQuad(new Rect(Screen.width/2-40,Screen.height/2-80,80,20),new Color (0.0f, 0.0f, 0.0f, 1.0f),"RELOADING");
 		}else{
 			DrawQuad(new Rect(Screen.width/2-25,Screen.height/2-80,50,20),new Color (0.0f, 0.0f, 0.0f, 1.0f),clip + "/" + clipSize);
 		}
