@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
 
-	float moveForce = 0.1f; 
+	float moveForce = 0.2f; 
 	RaycastHit2D hit;
 	public static Vector3 pos;
 	float moveRange = 1.5f;
@@ -15,13 +15,13 @@ public class PlayerMove : MonoBehaviour {
 	
 	void FixedUpdate () {
 		if(Input.GetKey(KeyCode.W) && transform.position.y <= (moveRange+initY)){
-			transform.position += new Vector3(0.75f*moveForce,moveForce,0);
+			transform.position += new Vector3(0.5f*moveForce,moveForce,0);
 		}
 		if(Input.GetKey(KeyCode.A)){
 			transform.position += new Vector3(-moveForce,0,0);
 		}
 		if(Input.GetKey(KeyCode.S) && transform.position.y >= (-moveRange+initY)){
-			transform.position += new Vector3(-0.75f*moveForce,-moveForce,0);
+			transform.position += new Vector3(-0.5f*moveForce,-moveForce,0);
 		}	
 		if(Input.GetKey(KeyCode.D)){
 			transform.position += new Vector3(moveForce,0,0);

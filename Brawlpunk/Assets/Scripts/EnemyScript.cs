@@ -19,10 +19,10 @@ public class EnemyScript : MonoBehaviour {
 	// detect if the enemy was hit by a live shot or not
 	void OnCollisionEnter2D(Collision2D hitBy){
 		if(hitBy.gameObject.tag=="shot"){  // if enemy was hit by a shot, remove health or destroy the enemy
-			Destroy (hitBy.gameObject);
+			Destroy (hitBy.transform.gameObject);
 			health--;
 			if(health < 1){
-				Destroy (gameObject);
+				Destroy (transform.gameObject);
 			}
 		}else if(hitBy.gameObject.tag=="Player"){
 			HealthController.P1Health -= damage;
