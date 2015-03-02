@@ -4,8 +4,8 @@ using System.Collections;
 public class HealthController : MonoBehaviour {
 
 	public static float P1Health = 100.0f;
-	float P1InitHealth;
-	public int P1Lives = 5;
+	public static float P1InitHealth;
+	public static int P1Lives = 5;
 	public GameObject PlayerOne;
 	Vector3 barPosition = new Vector3(0.0f,0.0f,0.0f);
 

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class SpawnScript : MonoBehaviour {
-	float spawnTime = 0.5f;  // time between enemy spawns
+	public static float spawnTime = 0.5f;  // time between enemy spawns
 	float timeLeft;
 	public GameObject enemy;
 
