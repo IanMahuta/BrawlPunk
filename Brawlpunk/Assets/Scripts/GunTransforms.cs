@@ -28,7 +28,7 @@ public class GunTransforms : MonoBehaviour {
 			angle = Mathf.PI;
 		}
 
-		if(!flipped){
+		if(flipped){
 			transform.rotation = Quaternion.AngleAxis((angle-PlayerShoot.recoil)*Mathf.Rad2Deg, Vector3.forward);
 			transform.localPosition = new Vector2(0.1f*Mathf.Cos (angle-PlayerShoot.recoil),0.1f*Mathf.Sin (angle-PlayerShoot.recoil));
 		}else{
