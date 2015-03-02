@@ -27,7 +27,12 @@ public class UIController : MonoBehaviour {
 		}
 
 		if(gamestate == -1 || gamestate == 2 || gamestate == 3 || gamestate == 4){
-			DrawQuad(new Rect(10,Screen.height-30,100,20),new Color(0.0f,0.0f,0.0f),"Ammo: " + PlayerShoot.ammo);
+			DrawQuad(new Rect(10,Screen.height-30,100,20),new Color(0.0f,0.0f,0.0f,1.0f),"Ammo: " + PlayerShoot.ammo);
+			if(!PlayerShoot.rel){
+				DrawQuad(new Rect(10,Screen.height-60,100,20),new Color(0.0f,0.0f,0.0f,1.0f),"Clip: " + PlayerShoot.clip + "/" + PlayerShoot.clipSize);
+			}else{
+				DrawQuad(new Rect(10,Screen.height-60,100,20),new Color(0.0f,0.0f,0.0f,1.0f),"RELOADING");
+			}
 		}
 	}
 
