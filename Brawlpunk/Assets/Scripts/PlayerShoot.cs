@@ -6,7 +6,7 @@ public class PlayerShoot : MonoBehaviour {
 	public static int ammo = 60;
 	public static int clip = 30; // Keeps track of the current clip
 	public static int clipSize = 30;
-	float shotSpeed = 0.05f; // Seconds between shots
+	float shotSpeed = 0.1f; // Seconds between shots
 	float reloadSpeed = 2.0f;
 	bool busy = false; // For allowing shooting or reloading based on relevent time delays.
 	public static bool rel = false;
@@ -14,14 +14,23 @@ public class PlayerShoot : MonoBehaviour {
 	public static float shotForce = 0.6f;
 	public static float spread = 0.075f;
 	public static float recoil = 0.0f;
+	GameObject S1;
+	AudioSource[] Snd;
+	
+	// Use this for initialization
+	void Start () {
+		S1 = GameObject.FindGameObjectWithTag("AudioHolder");
+		Snd = S1.GetComponents<AudioSource>();
+	}
 	
 	void FixedUpdate () {
-		if(Input.GetMouseButtonDown(0)){ //Mouse 1 to shoot. Mouse 2 for alt-firemode? Consult design team.
+		if(Input.GetMouseButtonDown(0) && !busy){ //Mouse 1 to shoot. Mouse 2 for alt-firemode? Consult design team.
 			if(clip >= 1 && !busy){
 				Instantiate (shot, new Vector2(0.4f*Mathf.Cos(GunTransforms.angle)+transform.position.x,0.4f*Mathf.Sin(GunTransforms.angle)+transform.position.y),Quaternion.identity);
 				clip -= 1;
 				StartCoroutine(BusyCheck(shotSpeed));
 				recoil = 0.5f;
+				Snd[0].Play();
 			}
 		}
 		if(Input.GetKey(KeyCode.R)){ // Also consult design team for the inclusion of "clips" or just one giant ammo supply.
