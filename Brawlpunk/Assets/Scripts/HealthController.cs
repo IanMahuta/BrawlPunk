@@ -23,7 +23,7 @@ public class HealthController : MonoBehaviour {
 				//And respawn the player
 				P1Health = P1InitHealth;
 			}else{
-				UIController.gamestate = 4; //Tell the UIController (and other controllers) to display a game over screen
+				UIController.gamestate = UIController.GAME_OVER_SCREEN; //Tell the UIController (and other controllers) to display a game over screen
 			}
 		}
 	}
@@ -31,9 +31,9 @@ public class HealthController : MonoBehaviour {
 	void OnGUI(){
 		//for displaying health bars for the players (just for debug(?))
 		barPosition = Camera.main.WorldToScreenPoint(PlayerMove.pos);
-		DrawQuad(new Rect(barPosition.x-20,Screen.height-barPosition.y-45,40,10),new Color (1.0f, 0.0f, 0.0f, 1.0f),"");
+		//DrawQuad(new Rect(barPosition.x-20,Screen.height-barPosition.y-45,40,10),new Color (1.0f, 0.0f, 0.0f, 1.0f),"");
 		if(P1Health > 0){
-			DrawQuad(new Rect(barPosition.x-20,Screen.height-barPosition.y-45,Mathf.RoundToInt(40*P1Health/P1InitHealth),10),new Color (0.0f, 1.0f, 0.0f, 1.0f),"");
+			//DrawQuad(new Rect(barPosition.x-20,Screen.height-barPosition.y-45,Mathf.RoundToInt(40*P1Health/P1InitHealth),10),new Color (0.0f, 1.0f, 0.0f, 1.0f),"");
 		}
 	}
 

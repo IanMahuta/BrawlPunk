@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class SpawnScript : MonoBehaviour {
-	public static float spawnTime = 0.5f;  // time between enemy spawns
+	public static float spawnTime = 1.0f;  // time between enemy spawns
 	float timeLeft;
 	public GameObject enemy;
-
+	public int numEnemies = 0;
+	public int maxEnemies = 5;
 
 	void Start () {  // spawn an enemy and start the countdown
 		spawn ();
@@ -15,7 +16,7 @@ public class SpawnScript : MonoBehaviour {
 	// update countdown, spawn an enemy if time has run out.  Restart countdown after spawn
 	void Update () {
 		timeLeft -= Time.deltaTime;
-		if(timeLeft <= 0){
+		if(timeLeft <= 0 && numEnemies < maxEnemies){
 			spawn ();
 			timeLeft = spawnTime;
 		}
@@ -23,5 +24,6 @@ public class SpawnScript : MonoBehaviour {
 
 	private void spawn(){  // spawn an enemy at the position of the spawner
 		Instantiate (enemy, this.transform.position, Quaternion.identity);
+		numEnemies ++;
 	}
 }

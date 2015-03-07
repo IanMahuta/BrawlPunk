@@ -3,24 +3,23 @@ using System.Collections;
 
 public class UIController : MonoBehaviour {
 
-	public static int gamestate = 0;
+	public const int DEBUG = -1;
+	public const int MAIN_MENU = 0;
+	public const int LEVEL_SELECT = 1;
+	public const int IN_GAME = 2;
+	public const int PAUSE_SCREEN = 3;
+	public const int GAME_OVER_SCREEN = 4;
+
+	public static int gamestate = MAIN_MENU;
 
 	// Use this for initialization
 	void Start () {
-		gamestate = -1;
+		gamestate = DEBUG;
 	}
 
 	void OnGUI(){
 		//Display different things based on the gamestate
-		//gamestate -1 = DEBUG
-		//gamestate 0 = main menu
-		//gamestate 1 = level select
-		//gamestate 2 = in game
-		//gamestate 3 = pause screen
-		//gamestate 4 = game over screen
-		//etc
-
-		if(gamestate == -1){
+		if(gamestate == DEBUG){
 			DrawQuad(new Rect(10,10,160,150),new Color(0.0f,0.0f,0.0f,1.0f),"DEBUG TOOLS");
 			if(GUI.Button(new Rect(15,35,100,20),"+45 Ammo")){
 				PlayerShoot.ammo += 45;
@@ -43,7 +42,7 @@ public class UIController : MonoBehaviour {
 			}
 		}
 
-		if(gamestate == -1 || gamestate == 2 || gamestate == 3 || gamestate == 4){
+		if(gamestate == DEBUG || gamestate == IN_GAME || gamestate == PAUSE_SCREEN || gamestate == MAIN_MENU){
 			DrawQuad(new Rect(10,Screen.height-30,100,20),new Color(0.0f,0.0f,0.0f,1.0f),"Ammo: " + PlayerShoot.ammo);
 			DrawQuad(new Rect(115,Screen.height-30,100,20),new Color(0.0f,0.0f,0.0f,1.0f),"Health: " + HealthController.P1Health);
 			DrawQuad(new Rect(115,Screen.height-50,100,20),new Color(0.0f,0.0f,0.0f,1.0f),"Lives: " + HealthController.P1Lives);
