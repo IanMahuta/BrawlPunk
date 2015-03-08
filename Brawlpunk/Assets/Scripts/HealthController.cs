@@ -6,6 +6,8 @@ public class HealthController : MonoBehaviour {
 	public static float P1Health = 100.0f;
 	public static float P1InitHealth;
 	public static int P1Lives = 5;
+	public static float invulnTime = 0.5f; //seconds of invulnerability after each hit
+	float sumTime = 0.0f;
 	public GameObject PlayerOne;
 	Vector3 barPosition = new Vector3(0.0f,0.0f,0.0f);
 
@@ -15,6 +17,13 @@ public class HealthController : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
+		if(sumTime >= invulnTime){
+			invulnTime = 0;
+			sumTime = 0;
+		}else{
+			sumTime += Time.deltaTime;
+		}
+
 		if(P1Health <= 0){
 			P1Health = 0;
 			//Destroy(PlayerOne.gameObject); //Or some sort of death animation
@@ -23,13 +32,13 @@ public class HealthController : MonoBehaviour {
 				//And respawn the player
 				P1Health = P1InitHealth;
 			}else{
-				UIController.gamestate = UIController.GAME_OVER_SCREEN; //Tell the UIController (and other controllers) to display a game over screen
+				//UIController.gamestate = UIController.GAME_OVER_SCREEN; //Tell the UIController (and other controllers) to display a game over screen
 			}
 		}
 	}
 
 	void OnGUI(){
-		//for displaying health bars for the players (just for debug(?))
+		//would eventually display health bar for player on in-game GUI near ammo and such
 		barPosition = Camera.main.WorldToScreenPoint(PlayerMove.pos);
 		//DrawQuad(new Rect(barPosition.x-20,Screen.height-barPosition.y-45,40,10),new Color (1.0f, 0.0f, 0.0f, 1.0f),"");
 		if(P1Health > 0){

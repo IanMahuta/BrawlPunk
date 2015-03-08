@@ -10,6 +10,8 @@ public class UIController : MonoBehaviour {
 	public const int PAUSE_SCREEN = 3;
 	public const int GAME_OVER_SCREEN = 4;
 
+	public SpawnScript EnemySpawn;
+
 	public static int gamestate = MAIN_MENU;
 
 	// Use this for initialization
@@ -20,7 +22,7 @@ public class UIController : MonoBehaviour {
 	void OnGUI(){
 		//Display different things based on the gamestate
 		if(gamestate == DEBUG){
-			DrawQuad(new Rect(10,10,160,150),new Color(0.0f,0.0f,0.0f,1.0f),"DEBUG TOOLS");
+			DrawQuad(new Rect(10,10,160,160),new Color(0.0f,0.0f,0.0f,1.0f),"DEBUG TOOLS");
 			if(GUI.Button(new Rect(15,35,100,20),"+45 Ammo")){
 				PlayerShoot.ammo += 45;
 			}
@@ -40,6 +42,11 @@ public class UIController : MonoBehaviour {
 					SpawnScript.spawnTime -= 0.1f;
 				}
 			}
+
+			if(GUI.Button(new Rect(12,135,120,20),"ResetSpawnCount")){
+				SpawnScript.numEnemies = 0;
+			}
+
 		}
 
 		if(gamestate == DEBUG || gamestate == IN_GAME || gamestate == PAUSE_SCREEN || gamestate == MAIN_MENU){

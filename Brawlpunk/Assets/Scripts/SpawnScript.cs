@@ -5,7 +5,7 @@ public class SpawnScript : MonoBehaviour {
 	public static float spawnTime = 1.0f;  // time between enemy spawns
 	float timeLeft;
 	public GameObject enemy;
-	public int numEnemies = 0;
+	public static int numEnemies = 0;
 	public int maxEnemies = 5;
 
 	void Start () {  // spawn an enemy and start the countdown
