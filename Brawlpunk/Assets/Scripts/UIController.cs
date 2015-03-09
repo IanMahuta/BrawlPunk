@@ -52,6 +52,7 @@ public class UIController : MonoBehaviour {
 			DrawQuad(new Rect(10,Screen.height-30,100,20),new Color(0.0f,0.0f,0.0f,1.0f),"Ammo: " + PlayerShoot.ammo,12);
 			DrawQuad(new Rect(115,Screen.height-30,100,20),new Color(0.0f,0.0f,0.0f,1.0f),"Health: " + HealthController.P1Health,12);
 			DrawQuad(new Rect(115,Screen.height-50,100,20),new Color(0.0f,0.0f,0.0f,1.0f),"Lives: " + HealthController.P1Lives,12);
+
 			if(!PlayerShoot.rel){
 				DrawQuad(new Rect(10,Screen.height-50,100,20),new Color(0.0f,0.0f,0.0f,1.0f),"Clip: " + PlayerShoot.clip + "/" + PlayerShoot.clipSize,12);
 			}else{

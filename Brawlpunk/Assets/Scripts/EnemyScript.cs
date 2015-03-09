@@ -20,7 +20,7 @@ public class EnemyScript : MonoBehaviour {
 		if(dist <= distance){
 			transform.position += PlayerMove.pos-currentPos;
 		}else{
-			transform.position += (PlayerMove.pos-currentPos)/dist*distance;
+			transform.position += (PlayerMove.pos-currentPos)/dist*distance/2;
 		}
 		
 	}
