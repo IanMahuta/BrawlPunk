@@ -1,15 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMove.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerShoot.cs">
     <Files>
-      <File FileName="Assets\Scripts\UIController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HealthController.cs" Line="24" Column="30" />
-      <File FileName="Assets\Scripts\CameraController.cs" Line="7" Column="2" />
-      <File FileName="Assets\Scripts\EnemyScript.cs" Line="15" Column="34" />
-      <File FileName="Assets\Scripts\GunTransforms.cs" Line="15" Column="2" />
+      <File FileName="Assets\Scripts\EnemyScript.cs" Line="16" Column="42" />
+      <File FileName="Assets\Scripts\UIController.cs" Line="66" Column="24" />
+      <File FileName="Assets\Scripts\HealthController.cs" Line="26" Column="1" />
+      <File FileName="Assets\Scripts\CameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GunTransforms.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LevelController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PlayerMove.cs" Line="29" Column="28" />
-      <File FileName="Assets\Scripts\PlayerShoot.cs" Line="13" Column="43" />
+      <File FileName="Assets\Scripts\PlayerShoot.cs" Line="15" Column="38" />
       <File FileName="Assets\Scripts\ProjectileMove.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\SpawnScript.cs" Line="1" Column="1" />
     </Files>
@@ -18,7 +18,7 @@
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Scripts" expanded="True">
-              <Node name="PlayerMove.cs" selected="True" />
+              <Node name="PlayerShoot.cs" selected="True" />
             </Node>
           </Node>
         </State>

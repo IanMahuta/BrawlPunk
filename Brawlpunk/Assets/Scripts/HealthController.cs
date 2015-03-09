@@ -32,7 +32,8 @@ public class HealthController : MonoBehaviour {
 				//And respawn the player
 				P1Health = P1InitHealth;
 			}else{
-				//UIController.gamestate = UIController.GAME_OVER_SCREEN; //Tell the UIController (and other controllers) to display a game over screen
+				Time.timeScale = 0;
+				UIController.gamestate = UIController.GAME_OVER_SCREEN; //Tell the UIController (and other controllers) to display a game over screen
 			}
 		}
 	}
