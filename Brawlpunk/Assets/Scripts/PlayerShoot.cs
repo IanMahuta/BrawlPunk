@@ -6,7 +6,7 @@ public class PlayerShoot : MonoBehaviour {
 	public static int ammo = 60;
 	public static int clip = 30; // Keeps track of the current clip
 	public static int clipSize = 30;
-	float shotSpeed = 0.1f; // Seconds between shots
+	float shotSpeed = 0.01f; // Seconds between shots
 	float reloadSpeed = 2.0f;
 	bool busy = false; // For allowing shooting or reloading based on relevent time delays.
 	public static bool rel = false;
