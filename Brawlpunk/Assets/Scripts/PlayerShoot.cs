@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerShoot : MonoBehaviour {
 
-	public static int ammo = 60;
+	int defaultClip = 30;
 	public static int clip = 30; // Keeps track of the current clip
 	public static int clipSize = 30;
 	float shotSpeed = 0.01f; // Seconds between shots
@@ -16,6 +16,11 @@ public class PlayerShoot : MonoBehaviour {
 	public static float recoil = 0.0f;
 	GameObject S1;
 	AudioSource[] Snd;
+
+	void Awake(){
+		clip = defaultClip;
+		clipSize = defaultClip;
+	}
 	
 	// Use this for initialization
 	void Start () {
@@ -34,14 +39,8 @@ public class PlayerShoot : MonoBehaviour {
 			}
 		}
 		if(Input.GetKey(KeyCode.R)){ // Also consult design team for the inclusion of "clips" or just one giant ammo supply.
-			if(ammo > 0 && clip < clipSize && !busy){
-				if(ammo+clip >= clipSize){
-					ammo -= clipSize-clip;
-					clip = clipSize;
-				}else{
-					clip += ammo;
-					ammo = 0;
-				}
+			if(clip < clipSize && !busy){
+				clip = clipSize;
 				StartCoroutine(BusyCheck(reloadSpeed));
 				rel = true;
 			}

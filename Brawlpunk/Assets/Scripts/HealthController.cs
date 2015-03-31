@@ -3,6 +3,8 @@ using System.Collections;
 
 public class HealthController : MonoBehaviour {
 
+	float defaultHealth = 100.0f;
+	int defaultLives = 5;
 	public static float P1Health = 100.0f;
 	public static float P1InitHealth;
 	public static int P1Lives = 5;
@@ -11,9 +13,11 @@ public class HealthController : MonoBehaviour {
 	public GameObject PlayerOne;
 	Vector3 barPosition = new Vector3(0.0f,0.0f,0.0f);
 
-	// Use this for initialization
-	void Start () {
-		P1InitHealth = P1Health;
+	//Resets the static variables
+	void Awake(){
+		P1Health = defaultHealth;
+		P1InitHealth = defaultHealth;
+		P1Lives = defaultLives;
 	}
 	
 	void FixedUpdate () {

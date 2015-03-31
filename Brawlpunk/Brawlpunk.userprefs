@@ -1,31 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerWeaponController.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HealthController.cs">
     <Files>
-      <File FileName="Assets\Scripts\EnemyScript.cs" Line="23" Column="70" />
-      <File FileName="Assets\Scripts\UIController.cs" Line="63" Column="15" />
-      <File FileName="Assets\Scripts\HealthController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UIController.cs" Line="93" Column="21" />
+      <File FileName="Assets\Scripts\PlayerMove.cs" Line="12" Column="7" />
+      <File FileName="Assets\Scripts\LevelController.cs" Line="13" Column="1" />
       <File FileName="Assets\Scripts\CameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GunTransforms.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LevelController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerShoot.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemyScript.cs" Line="13" Column="19" />
+      <File FileName="Assets\Scripts\GunTransforms.cs" Line="13" Column="17" />
+      <File FileName="Assets\Scripts\PlayerShoot.cs" Line="22" Column="26" />
+      <File FileName="Assets\Scripts\PlayerWeaponController.cs" Line="10" Column="66" />
       <File FileName="Assets\Scripts\ProjectileMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SpawnScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerSwing.cs" Line="6" Column="51" />
-      <File FileName="Assets\Scripts\PlayerWeaponController.cs" Line="11" Column="1" />
+      <File FileName="Assets\Scripts\PlayerSwing.cs" Line="24" Column="41" />
+      <File FileName="Assets\Scripts\HealthController.cs" Line="16" Column="31" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True">
-              <Node name="PlayerWeaponController.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

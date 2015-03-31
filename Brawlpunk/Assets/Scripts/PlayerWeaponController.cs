@@ -8,10 +8,6 @@ public class PlayerWeaponController : MonoBehaviour {
 	public string[] weaponName;
 	public Texture2D[] weaponIcon;
 	public int[] weaponType; //0 = Ranged, 1 = Melee, 2 = Empty Slot
-
-	void Start () {
-		
-	}
 	
 	void FixedUpdate () {
 		if(Input.GetKeyDown(KeyCode.Alpha1)){
