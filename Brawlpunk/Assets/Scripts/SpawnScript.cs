@@ -7,6 +7,7 @@ public class SpawnScript : MonoBehaviour {
 	public GameObject enemy;
 	public static int numEnemies = 0;
 	public int maxEnemies = 5;
+	public ParticleSystem effect;
 
 	void Start () {  // spawn an enemy and start the countdown
 		spawn ();
@@ -16,9 +17,14 @@ public class SpawnScript : MonoBehaviour {
 	// update countdown, spawn an enemy if time has run out.  Restart countdown after spawn
 	void Update () {
 		timeLeft -= Time.deltaTime;
-		if(timeLeft <= 0 && numEnemies < maxEnemies){
-			spawn ();
-			timeLeft = spawnTime;
+		if(timeLeft <= 0){
+			if(numEnemies < maxEnemies){
+				spawn ();
+				timeLeft = spawnTime;
+				effect.enableEmission = true;
+			}else{
+				effect.enableEmission = false;
+			}
 		}
 	}
 
