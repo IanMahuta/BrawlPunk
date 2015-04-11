@@ -1,7 +1,14 @@
 fileFormatVersion: 2
 guid: c3df6a8b9adf0534bb7635c3531e9983
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Main Character_0
+    21300002: Main Character_1
+    21300004: Main Character_2
+    21300006: Main Character_3
+    21300008: Main Character_4
+    21300010: Main Character_5
+    21300012: Main Character_6
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -31,7 +38,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +49,76 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Main Character_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 15
+        width: 48
+        height: 107
+      alignment: 9
+      pivot: {x: .462014943, y: .335279793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Main Character_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 86
+        width: 33
+        height: 28
+      alignment: 9
+      pivot: {x: .131659999, y: .876232684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Main Character_2
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 71
+        width: 16
+        height: 45
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Main Character_3
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 71
+        width: 16
+        height: 45
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Main Character_4
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 38
+        width: 24
+        height: 27
+      alignment: 9
+      pivot: {x: .74479264, y: .980205655}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Main Character_5
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 21
+        width: 17
+        height: 44
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Main Character_6
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 21
+        width: 17
+        height: 44
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
