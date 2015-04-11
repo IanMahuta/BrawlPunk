@@ -7,6 +7,8 @@ public class EnemyScript : MonoBehaviour {
 	float timeSinceMove = 0;
 	float health = 3.0f;
 	float damage = 15.0f; //damage the enemy does to the player on attack
+	public static float invulnTime = 0.5f;
+	float timeSinceHit = 0.0f;
 	
 	// Move the enemy
 	void FixedUpdate () {
@@ -20,6 +22,7 @@ public class EnemyScript : MonoBehaviour {
 		}else{
 			transform.position += (PlayerMove.pos-currentPos)/dist*distance/2;
 		}
+		timeSinceHit += Time.deltaTime;
 	}
 	
 	void OnCollisionEnter2D(Collision2D hitBy){
@@ -29,7 +32,9 @@ public class EnemyScript : MonoBehaviour {
 			if(health < 1){
 				Destroy(transform.gameObject);
 			}
-		}else if(hitBy.gameObject.tag == "melee"){
+		}else if(timeSinceHit > invulnTime && hitBy.gameObject.tag == "melee"){
+			Debug.Log ("hit");
+			invulnTime = 0.0f;
 			health--;
 			if(health < 1){
 				Destroy(transform.gameObject);
