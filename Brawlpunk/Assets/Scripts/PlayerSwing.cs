@@ -3,11 +3,11 @@ using System.Collections;
 
 public class PlayerSwing : MonoBehaviour {
 
-	float swingDelay = 1.0f; // Seconds between swings
+	float swingTime = 0.1f; // Time taken to swing once
 	bool busy = false; // For checking if still swinging
 	GameObject S1;
 	AudioSource[] Snd;
-	public static float swingDist = 50.0f; //degrees
+	public static float swingDist = 90.0f; //degrees
 	float swing;
 
 	void Start () {
@@ -17,19 +17,23 @@ public class PlayerSwing : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
+		gameObject.collider2D.enabled = false;
 		if(Input.GetMouseButtonDown(0) && !busy){
 			busy = true;
-			swingDelay = 1.0f;
+			swingTime = 0;
 			swingDist = 0;
+			Snd[0].Play();
 		}
 
-		if(busy && swingDelay < 0.1f){
-			swingDelay = 0;
-			swingDist = swing;
+		if(busy && swingTime > 0.1f){
+			swingTime = 0.1f;
+			swingDist = 0;
 			busy = false;
+			gameObject.collider2D.enabled = false;
 		}else if(busy){
-			swingDelay -= Time.deltaTime;
-			swingDist = (1.0f - Time.deltaTime/swingDelay)*Mathf.Deg2Rad*swing;
+			swingTime += Time.deltaTime;
+			swingDist += 2*swingTime*Mathf.Deg2Rad*swing;
+			gameObject.collider2D.enabled = true;
 		}
 	}
 }
