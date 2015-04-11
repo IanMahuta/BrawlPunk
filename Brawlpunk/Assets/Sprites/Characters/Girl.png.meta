@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-guid: 65aab3692583a594cb3913c1e6c47ba2
+guid: 47c40d2d392e06148af818ef947c3b84
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Main Character 1_0
-    21300002: Main Character 1_1
-    21300004: Main Character 1_2
-    21300006: Main Character 1_3
-    21300008: Main Character 1_4
-    21300010: Main Character 1_5
-    21300012: Main Character 1_6
+    21300000: Girl_0
+    21300002: Girl_1
+    21300004: Girl_2
+    21300006: Girl_3
+    21300008: Girl_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -28,7 +26,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
@@ -50,37 +48,37 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Main Character 1_0
+    - name: Girl_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 15
-        width: 48
-        height: 107
+        x: 4
+        y: 13
+        width: 55
+        height: 105
       alignment: 9
-      pivot: {x: .445132703, y: .318239808}
+      pivot: {x: .474216223, y: .397741854}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_1
+    - name: Girl_1
       rect:
         serializedVersion: 2
         x: 64
         y: 86
         width: 33
         height: 28
-      alignment: 9
-      pivot: {x: .113243103, y: .890702903}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_2
+    - name: Girl_2
       rect:
         serializedVersion: 2
         x: 114
-        y: 71
+        y: 72
         width: 14
-        height: 43
+        height: 35
       alignment: 2
       pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_4
+    - name: Girl_3
       rect:
         serializedVersion: 2
         x: 75
@@ -88,15 +86,15 @@ TextureImporter:
         width: 24
         height: 27
       alignment: 9
-      pivot: {x: .74479264, y: .920180023}
+      pivot: {x: .753233612, y: .935186327}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_5
+    - name: Girl_4
       rect:
         serializedVersion: 2
         x: 112
         y: 17
-        width: 20
-        height: 48
+        width: 19
+        height: 47
       alignment: 2
       pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}

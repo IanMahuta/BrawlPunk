@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-guid: 65aab3692583a594cb3913c1e6c47ba2
+guid: 2469bdcf8b2588449b0aeb742aff6d42
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Main Character 1_0
-    21300002: Main Character 1_1
-    21300004: Main Character 1_2
-    21300006: Main Character 1_3
-    21300008: Main Character 1_4
-    21300010: Main Character 1_5
-    21300012: Main Character 1_6
+    21300000: Man_0
+    21300002: Man_1
+    21300004: Man_2
+    21300006: Man_4
+    21300008: Man_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -50,17 +48,17 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Main Character 1_0
+    - name: Man_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 15
-        width: 48
-        height: 107
+        x: 5
+        y: 21
+        width: 49
+        height: 100
       alignment: 9
-      pivot: {x: .445132703, y: .318239808}
+      pivot: {x: .425580323, y: .394654781}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_1
+    - name: Man_1
       rect:
         serializedVersion: 2
         x: 64
@@ -68,19 +66,19 @@ TextureImporter:
         width: 33
         height: 28
       alignment: 9
-      pivot: {x: .113243103, y: .890702903}
+      pivot: {x: .0764090791, y: .912408829}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_2
+    - name: Man_2
       rect:
         serializedVersion: 2
         x: 114
-        y: 71
+        y: 72
         width: 14
-        height: 43
+        height: 44
       alignment: 2
       pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_4
+    - name: Man_4
       rect:
         serializedVersion: 2
         x: 75
@@ -88,15 +86,15 @@ TextureImporter:
         width: 24
         height: 27
       alignment: 9
-      pivot: {x: .74479264, y: .920180023}
+      pivot: {x: .736351311, y: .920180023}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_5
+    - name: Man_5
       rect:
         serializedVersion: 2
-        x: 112
-        y: 17
-        width: 20
-        height: 48
+        x: 113
+        y: 13
+        width: 19
+        height: 52
       alignment: 2
       pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
