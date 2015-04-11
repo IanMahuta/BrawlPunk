@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyScript : MonoBehaviour {
+public class Bomber_Script : MonoBehaviour {
 
 	public float speed = 5;  //distance that the enemy moves every second
 	float timeSinceMove = 0;
 	float health = 3.0f;
-	//float initHealth = 3.0f;
-	Vector3 barPosition = new Vector3(0.0f,0.0f,0.0f);
-	float damage = 15.0f; //damage the enemy does to the player on attack
+	Vector3 shadowPosition = new Vector3(0.0f,0.0f,0.0f);
 	
 	// Move the enemy
 	void FixedUpdate () {
@@ -31,24 +29,8 @@ public class EnemyScript : MonoBehaviour {
 			health--;
 			if(health < 1){
 				Destroy(transform.gameObject);
-				// decrease num enemies counter
 			}
 		}
-	}
-	
-	void OnCollisionStay2D(Collision2D hitBy){
-		if(hitBy.gameObject.tag == "Player"){
-			if(HealthController.invulnTime == 0){
-				HealthController.P1Health -= damage;
-				HealthController.invulnTime = 0.5f;
-			}
-		}
-	}
-	
-	void OnGUI(){
-		barPosition = Camera.main.WorldToScreenPoint(transform.position);
-		//DrawQuad(new Rect(barPosition.x-20,Screen.height-barPosition.y-35,40,10),new Color (1.0f, 0.0f, 0.0f, 1.0f),"");
-		//DrawQuad(new Rect(barPosition.x-20,Screen.height-barPosition.y-35,Mathf.RoundToInt(40*health/initHealth),10),new Color (0.0f, 1.0f, 0.0f, 1.0f),"");
 	}
 	
 	void DrawQuad(Rect position, Color color, string strng) {

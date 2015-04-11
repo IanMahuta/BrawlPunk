@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GunTransforms : MonoBehaviour {
-	
+public class MeleeTransforms : MonoBehaviour {
+
 	public static float angle;
 	bool flipped = false;
 	Vector3 scale;
@@ -26,7 +26,7 @@ public class GunTransforms : MonoBehaviour {
 			flipped = false;
 			angle = Mathf.PI;
 		}
-
+		
 		//Rotate the gun based on recoil
 		if(!flipped){
 			transform.rotation = Quaternion.AngleAxis((angle-PlayerShoot.recoil)*Mathf.Rad2Deg, Vector3.forward);

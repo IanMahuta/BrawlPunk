@@ -45,14 +45,14 @@ public class UIController : MonoBehaviour {
 		if(gamestate == PAUSE_SCREEN){
 			DrawQuad(new Rect(Screen.width/2-100,Screen.height/2-100,200,300),new Color(0.0f,0.0f,0.0f,1.0f),"PAUSED",36);
 			//Buttons for exiting to main menu, options, resuming
-			if(GUI.Button(new Rect(Screen.width/2-90,Screen.height/2-10,180,60),"Resume")){
+			if(GUI.Button(new Rect(Screen.width/2-90,Screen.height/2-30,180,60),"Resume")){
 				gamestate = IN_GAME;
 				Time.timeScale = 1;
 			}
-			if(GUI.Button(new Rect(Screen.width/2-90,Screen.height/2+60,180,60),"Options")){
+			if(GUI.Button(new Rect(Screen.width/2-90,Screen.height/2+40,180,60),"Options")){
 				gamestate = OPTIONS;
 			}
-			if(GUI.Button(new Rect(Screen.width/2-90,Screen.height/2+130,180,60),"Quit")){
+			if(GUI.Button(new Rect(Screen.width/2-90,Screen.height/2+110,180,60),"Quit")){
 				gamestate = MAIN_MENU;
 				//Application.LoadLevel();
 			}
@@ -60,7 +60,7 @@ public class UIController : MonoBehaviour {
 
 		if(gamestate == OPTIONS){
 			DrawQuad(new Rect(Screen.width/2-100,Screen.height/2-100,200,300),new Color(0.0f,0.0f,0.0f,1.0f),"OPTIONS",36);
-			if(GUI.Button(new Rect(Screen.width/2-90,Screen.height/2-10,180,60),"Back")){
+			if(GUI.Button(new Rect(Screen.width/2-90,Screen.height/2-30,180,60),"Back")){
 				gamestate = PAUSE_SCREEN;
 			}
 		}
@@ -91,21 +91,24 @@ public class UIController : MonoBehaviour {
 
 		//Displays ammo and such
 		if(gamestate == IN_GAME || gamestate == PAUSE_SCREEN || gamestate == OPTIONS){
+			DrawQuad(new Rect(5,Screen.height*4/5-5,Screen.width-10,Screen.height/5+5),new Color(0.5f,0.5f,0.5f,1.0f),"",12);
 			DrawQuad(new Rect(10,Screen.height*4/5,Screen.width-20,Screen.height/5),new Color(0.1f,0.1f,0.1f,0.9f),"",12);
+
+			DrawQuad(new Rect(Screen.width/2-55,5,110,30),new Color(0.0f,0.0f,0.0f,1.0f),"" + HealthController.P1Health,12);
+			DrawQuad(new Rect(Screen.width/2-Mathf.Round(HealthController.P1Health/2),10,HealthController.P1Health,20),new Color(1.0f,0.0f,0.0f,0.75f),"",12);
 			
-			DrawQuad(new Rect(15,Screen.height*4/5+30,100,30),new Color(1.0f,0.0f,0.0f,0.9f),"Health: " + HealthController.P1Health,16);
-			DrawQuad(new Rect(120,Screen.height*4/5+30,100,30),new Color(0.0f,1.0f,0.0f,0.9f),"Lives: " + HealthController.P1Lives,16);
+			DrawQuad(new Rect(15,Screen.height*4/5+5,120,30),new Color(0.0f,1.0f,0.0f,0.9f),"Lives: " + HealthController.P1Lives,16);
 
 			if(!PlayerShoot.rel){
-				DrawQuad(new Rect(15,Screen.height*4/5+60,120,30),new Color(0.0f,0.0f,1.0f,0.9f),"Clip: " + PlayerShoot.clip,16);
+				DrawQuad(new Rect(15,Screen.height*4/5+35,120,30),new Color(0.0f,0.0f,1.0f,0.9f),"Clip: " + PlayerShoot.clip,16);
 			}else{
-				DrawQuad(new Rect(15,Screen.height*4/5+60,120,30),new Color(0.0f,0.0f,1.0f,0.9f),"RELOADING",16);
+				DrawQuad(new Rect(15,Screen.height*4/5+35,120,30),new Color(0.0f,0.0f,1.0f,0.9f),"RELOADING",16);
 			}
 		}
 
 		//Displays the game over screen with restart options
 		if(gamestate == GAME_OVER_SCREEN){
-			DrawQuad(new Rect(10,10,Screen.width-20,Screen.height-20),new Color(1.0f,0.0f,0.0f,1.0f),"UR DED LOL",190);
+			DrawQuad(new Rect(10,10,Screen.width-20,Screen.height-20),new Color(1.0f,0.0f,0.0f,0.5f),"UR DED LOL",190);
 			if(GUI.Button(new Rect(Screen.width/2-40,Screen.height/2-20,80,40),"RESTART")){
 				Application.LoadLevel(Application.loadedLevel);
 				Time.timeScale = 1;
