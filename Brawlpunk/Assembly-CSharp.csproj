@@ -58,14 +58,9 @@
      <Compile Include="Assets\Scripts\PlayerSwing.cs" />
      <Compile Include="Assets\Scripts\PlayerWeaponController.cs" />
      <Compile Include="Assets\Scripts\ProjectileMove.cs" />
+     <Compile Include="Assets\Scripts\ScorpionScript.cs" />
      <Compile Include="Assets\Scripts\SpawnScript.cs" />
      <Compile Include="Assets\Scripts\UIController.cs" />
-     <None Include="Assets\Sounds\Misc\Electronic\Glitches\Vinyl Scratchin\__details_and_attribution.txt" />
-     <None Include="Assets\Sounds\Misc\Electronic\Glitches\Firus fx\__license.txt" />
-     <None Include="Assets\Sounds\Misc\Electronic\Glitches\Vinyl Scratchin\__license.txt" />
-     <None Include="Assets\Sounds\Misc\Electronic\Glitches\Firus fx\__details_and_attribution.txt" />
-     <None Include="Assets\Sounds\Misc\Electronic\Glitches\Vinyl static\__license.txt" />
-     <None Include="Assets\Sounds\Misc\Electronic\Glitches\Vinyl static\__details_and_attribution.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
