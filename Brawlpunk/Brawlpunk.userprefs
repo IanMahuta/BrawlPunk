@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MeleeTransforms.cs">
     <Files>
@@ -10,6 +11,17 @@
       <File FileName="Assets\Scripts\PlayerMove.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ProjectileMove.cs" Line="21" Column="1" />
       <File FileName="Assets\Scripts\EnemyScript.cs" Line="31" Column="35" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ScorpionScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\SpawnScript.cs" Line="40" Column="18" />
+      <File FileName="Assets\Scripts\EnemyScript.cs" Line="43" Column="40" />
+      <File FileName="Assets\Scripts\ScorpionScript.cs" Line="23" Column="42" />
+      <File FileName="Assets\Scripts\UIController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerShoot.cs" Line="13" Column="2" />
+>>>>>>> origin/dev
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
