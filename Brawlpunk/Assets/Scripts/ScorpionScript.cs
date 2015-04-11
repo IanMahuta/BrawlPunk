@@ -76,7 +76,6 @@ public class ScorpionScript : MonoBehaviour {
 	}
 
 	void ShootArrow(){
-		Instantiate (shot, new Vector2(0.4f*Mathf.Cos(GunTransforms.angle)+transform.position.x,0.4f*Mathf.Sin(GunTransforms.angle)+transform.position.y),Quaternion.identity);
-
+		Instantiate (shot, new Vector2(transform.position.x,transform.position.y),Quaternion.identity);
 	}
 }
