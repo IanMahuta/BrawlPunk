@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\HealthController.cs" />
      <Compile Include="Assets\Scripts\LevelController.cs" />
      <Compile Include="Assets\Scripts\MeleeTransforms.cs" />
+     <Compile Include="Assets\Scripts\ParticleTest.cs" />
      <Compile Include="Assets\Scripts\PlayerHealthScript.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\PlayerShoot.cs" />
@@ -61,10 +62,11 @@
      <Compile Include="Assets\Scripts\PlayerWeaponController.cs" />
      <Compile Include="Assets\Scripts\ProjectileMove.cs" />
      <Compile Include="Assets\Scripts\SaveLoad_Controller.cs" />
+     <Compile Include="Assets\Scripts\ScorpionScript.cs" />
      <Compile Include="Assets\Scripts\SpawnScript.cs" />
      <Compile Include="Assets\Scripts\UIController.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

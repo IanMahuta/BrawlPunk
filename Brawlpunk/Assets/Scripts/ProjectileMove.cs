@@ -9,7 +9,6 @@ public class ProjectileMove : MonoBehaviour {
 	void Start () { 
 		bangle = GunTransforms.angle+Random.Range(-PlayerShoot.spread,PlayerShoot.spread);
 		transform.rotation = Quaternion.AngleAxis((GunTransforms.angle+Random.Range(-PlayerShoot.spread,PlayerShoot.spread))*Mathf.Rad2Deg, Vector3.forward);
-		//transform.rigidbody2D.AddForce(transform.right*PlayerShoot.shotForce);
 	}
 
 	void FixedUpdate(){
