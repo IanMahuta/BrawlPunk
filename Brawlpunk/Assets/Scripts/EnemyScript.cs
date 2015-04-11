@@ -23,7 +23,6 @@ public class EnemyScript : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter2D(Collision2D hitBy){
-		Debug.Log (hitBy.gameObject.tag);
 		if(hitBy.gameObject.tag == "shot"){  // if enemy was hit by a shot, remove health or destroy the enemy
 			Destroy(hitBy.transform.gameObject);
 			health--;
