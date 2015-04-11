@@ -8,29 +8,37 @@ public class PlayerWeaponController : MonoBehaviour {
 	public string[] weaponName;
 	public Texture2D[] weaponIcon;
 	public int[] weaponType; //0 = Ranged, 1 = Melee, 2 = Empty Slot
+	public GameObject[] weapons;
+
+	void Start(){
+		weaponSlot = 1;
+		weapons[0].SetActive(true);
+		weapons[1].SetActive(false);
+	}
 	
 	void FixedUpdate () {
 		if(Input.GetKeyDown(KeyCode.Alpha1)){
 			weaponSlot = 1;
+			weapons[0].SetActive(true);
+			weapons[1].SetActive(false);
 		}else if(Input.GetKeyDown(KeyCode.Alpha2)){
 			weaponSlot = 2;
-		}else if(Input.GetKeyDown(KeyCode.Alpha3)){
-			weaponSlot = 3;
+			weapons[0].SetActive(false);
+			weapons[1].SetActive(true);
 		}
-		
-		//Add section that checks weaponNum vs some data source to get texture, name, upgrades, etc.
 	}
 
 	void OnGUI(){
 		DrawQuad(new Rect(Screen.width/2-80,Screen.height-80,155,55),new Color(0.2f,0.2f,0.2f,1.0f),"",12);
 		if(GUI.Button(new Rect(Screen.width/2-75,Screen.height-75,45,45),weaponIcon[0])){
 			weaponSlot = 1;
+			weapons[0].SetActive(true);
+			weapons[1].SetActive(false);
 		}
 		if(GUI.Button(new Rect(Screen.width/2-25,Screen.height-75,45,45),weaponIcon[1])){
 			weaponSlot = 2;
-		}
-		if(GUI.Button(new Rect(Screen.width/2+25,Screen.height-75,45,45),weaponIcon[2])){
-			weaponSlot = 3;
+			weapons[0].SetActive(false);
+			weapons[1].SetActive(true);
 		}
 	}
 

@@ -20,12 +20,14 @@ public class PlayerShoot : MonoBehaviour {
 	void Awake(){
 		clip = defaultClip;
 		clipSize = defaultClip;
+		GunTransforms.angle = 0;
 	}
 	
 	// Use this for initialization
 	void Start () {
 		S1 = GameObject.FindGameObjectWithTag("AudioHolder");
 		Snd = S1.GetComponents<AudioSource>();
+		GunTransforms.angle = 0;
 	}
 	
 	void FixedUpdate () {
