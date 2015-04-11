@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 65aab3692583a594cb3913c1e6c47ba2
+guid: c3df6a8b9adf0534bb7635c3531e9983
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Main Character 1_0
-    21300002: Main Character 1_1
-    21300004: Main Character 1_2
-    21300006: Main Character 1_3
-    21300008: Main Character 1_4
-    21300010: Main Character 1_5
-    21300012: Main Character 1_6
+    21300000: Main Character_0
+    21300002: Main Character_1
+    21300004: Main Character_2
+    21300006: Main Character_3
+    21300008: Main Character_4
+    21300010: Main Character_5
+    21300012: Main Character_6
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -50,7 +50,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Main Character 1_0
+    - name: Main Character_0
       rect:
         serializedVersion: 2
         x: 6
@@ -58,9 +58,9 @@ TextureImporter:
         width: 48
         height: 107
       alignment: 9
-      pivot: {x: .445132703, y: .318239808}
+      pivot: {x: .462014943, y: .335279793}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_1
+    - name: Main Character_1
       rect:
         serializedVersion: 2
         x: 64
@@ -68,19 +68,19 @@ TextureImporter:
         width: 33
         height: 28
       alignment: 9
-      pivot: {x: .113243103, y: .890702903}
+      pivot: {x: .131659999, y: .876232684}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_2
+    - name: Main Character_2
       rect:
         serializedVersion: 2
-        x: 114
+        x: 113
         y: 71
-        width: 14
-        height: 43
+        width: 16
+        height: 45
       alignment: 2
       pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_3
+    - name: Main Character_3
       rect:
         serializedVersion: 2
         x: 142
@@ -90,7 +90,7 @@ TextureImporter:
       alignment: 2
       pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_4
+    - name: Main Character_4
       rect:
         serializedVersion: 2
         x: 75
@@ -98,19 +98,19 @@ TextureImporter:
         width: 24
         height: 27
       alignment: 9
-      pivot: {x: .74479264, y: .920180023}
+      pivot: {x: .74479264, y: .980205655}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_5
+    - name: Main Character_5
       rect:
         serializedVersion: 2
-        x: 112
-        y: 17
-        width: 20
-        height: 48
+        x: 116
+        y: 21
+        width: 17
+        height: 44
       alignment: 2
       pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Main Character 1_6
+    - name: Main Character_6
       rect:
         serializedVersion: 2
         x: 140
