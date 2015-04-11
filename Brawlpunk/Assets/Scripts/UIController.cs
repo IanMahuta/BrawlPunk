@@ -91,8 +91,8 @@ public class UIController : MonoBehaviour {
 
 		//Displays ammo and such
 		if(gamestate == IN_GAME || gamestate == PAUSE_SCREEN || gamestate == OPTIONS){
-			DrawQuad(new Rect(5,Screen.height*4/5-5,Screen.width-10,Screen.height/5+5),new Color(0.5f,0.5f,0.5f,1.0f),"",12);
-			DrawQuad(new Rect(10,Screen.height*4/5,Screen.width-20,Screen.height/5),new Color(0.1f,0.1f,0.1f,0.9f),"",12);
+			DrawQuad(new Rect(5,Screen.height*4/5-5,Screen.width/4-10,Screen.height/5+5),new Color(0.5f,0.5f,0.5f,1.0f),"",12);
+			DrawQuad(new Rect(10,Screen.height*4/5,Screen.width/4-20,Screen.height/5),new Color(0.1f,0.1f,0.1f,0.9f),"",12);
 
 			DrawQuad(new Rect(Screen.width/2-55,5,110,30),new Color(0.0f,0.0f,0.0f,1.0f),"" + HealthController.P1Health,12);
 			DrawQuad(new Rect(Screen.width/2-Mathf.Round(HealthController.P1Health/2),10,HealthController.P1Health,20),new Color(1.0f,0.0f,0.0f,0.75f),"",12);
