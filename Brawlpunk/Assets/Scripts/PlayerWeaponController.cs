@@ -31,16 +31,8 @@ public class PlayerWeaponController : MonoBehaviour {
 
 	void OnGUI(){
 		//On-screen weapon buttons. Change to current weapon indicator
-		DrawQuad(new Rect(Screen.width/2-80,Screen.height-80,155,55),new Color(0.2f,0.2f,0.2f,1.0f),"",12);
-		if(GUI.Button(new Rect(Screen.width/2-75,Screen.height-75,45,45),weaponIcon[0])){
-			weaponSlot = 1;
-			weapons[0].SetActive(true);
-			weapons[1].SetActive(false);
-		}
-		if(GUI.Button(new Rect(Screen.width/2-25,Screen.height-75,45,45),weaponIcon[1])){
-			weaponSlot = 2;
-			weapons[0].SetActive(false);
-			weapons[1].SetActive(true);
+		DrawQuad(new Rect(Screen.width/2-35,Screen.height-80,70,70),new Color(0.2f,0.2f,0.2f,1.0f),"",12);
+		if(GUI.Button(new Rect(Screen.width/2-30,Screen.height-75,60,60),weaponIcon[weaponSlot-1])){
 		}
 	}
 
