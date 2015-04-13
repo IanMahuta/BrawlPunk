@@ -31,6 +31,7 @@ public class PlayerShoot : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
+		//Press mouse button one to fire the gun when not already firing/recovering from recoil
 		if(Input.GetMouseButtonDown(0) && !busy){ //Mouse 1 to shoot. Mouse 2 for alt-firemode? Consult design team.
 			if(clip >= 1 && !busy){
 				Instantiate (shot, new Vector2(0.4f*Mathf.Cos(GunTransforms.angle)+transform.position.x,0.4f*Mathf.Sin(GunTransforms.angle)+transform.position.y),Quaternion.identity);
@@ -40,7 +41,9 @@ public class PlayerShoot : MonoBehaviour {
 				Snd[0].Play();
 			}
 		}
-		if(Input.GetKey(KeyCode.R)){ // Also consult design team for the inclusion of "clips" or just one giant ammo supply.
+
+		//Have finite clip but infinite ammo supply. Press R to reload
+		if(Input.GetKey(KeyCode.R)){
 			if(clip < clipSize && !busy){
 				clip = clipSize;
 				StartCoroutine(BusyCheck(reloadSpeed));
@@ -48,6 +51,7 @@ public class PlayerShoot : MonoBehaviour {
 			}
 		}
 
+		//Calculate recoil for angling the gun
 		if(Mathf.Abs(recoil) > 0.0f && busy){
 			recoil *= 0.5f;
 		}else{

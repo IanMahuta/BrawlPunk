@@ -33,8 +33,7 @@ public class EnemyScript : MonoBehaviour {
 				Destroy(transform.gameObject);
 			}
 		}else if(timeSinceHit > invulnTime && hitBy.gameObject.tag == "melee"){
-			Debug.Log ("hit");
-			invulnTime = 0.0f;
+			invulnTime = 0.2f;
 			health--;
 			if(health < 1){
 				Destroy(transform.gameObject);

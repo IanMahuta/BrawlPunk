@@ -14,7 +14,7 @@ public class MeleeTransforms : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-		//Mirror the gun across the player based on movement, not mouse
+		//Mirror the weapon across the player based on movement, not mouse
 		if(Input.GetKey (KeyCode.D) && !flipped){
 			scale.y *= -1;
 			transform.localScale = scale;

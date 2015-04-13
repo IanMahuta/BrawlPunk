@@ -3,19 +3,21 @@ using System.Collections;
 
 public class ProjectileMove : MonoBehaviour {
 
-	// Bullets are physics-based and will move in their initial direction with a force specified by the gun that spawned them.
 	float bangle = 0.0f;
 	
 	void Start () { 
+		//Angle the bullets so they match the angle of the gun that shot them, with spread
 		bangle = GunTransforms.angle+Random.Range(-PlayerShoot.spread,PlayerShoot.spread);
 		transform.rotation = Quaternion.AngleAxis((GunTransforms.angle+Random.Range(-PlayerShoot.spread,PlayerShoot.spread))*Mathf.Rad2Deg, Vector3.forward);
 	}
 
 	void FixedUpdate(){
+		//bullet moves in a straight line by incrementing its position
 		transform.position += new Vector3(PlayerShoot.shotForce*Mathf.Cos(bangle),PlayerShoot.shotForce*Mathf.Sin(bangle),0);
 	}
 
 	void OnCollisionEnter2D(){
+		//bullet despawns after contact with any object
 		StartCoroutine(Despawn(0.05f));
 	}
 

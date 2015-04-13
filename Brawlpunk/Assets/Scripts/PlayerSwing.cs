@@ -17,6 +17,7 @@ public class PlayerSwing : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
+		//Try to attack if not already attacking when the mouse 1 button is pressed
 		gameObject.collider2D.enabled = false;
 		if(Input.GetMouseButtonDown(0) && !busy){
 			busy = true;
@@ -25,6 +26,7 @@ public class PlayerSwing : MonoBehaviour {
 			Snd[0].Play();
 		}
 
+		//If still swinging, change the orientation of the melee weapon and don't allow swinging
 		if(busy && swingTime > 0.1f){
 			swingTime = 0.1f;
 			swingDist = 0;

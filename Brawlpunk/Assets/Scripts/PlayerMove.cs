@@ -10,10 +10,12 @@ public class PlayerMove : MonoBehaviour {
 	float initY;
 
 	void Start(){
+		//Finite vertical move range centered on the initial position
 		initY = transform.position.y;
 	}
 	
 	void FixedUpdate () {
+		//Position incrementation based movement using WASD keys
 		if(Input.GetKey(KeyCode.W) && transform.position.y <= (moveRange+initY)){
 			transform.position += new Vector3(0.5f*moveForce,moveForce,0);
 		}

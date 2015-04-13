@@ -6,9 +6,8 @@ public class ParticleTest : MonoBehaviour {
 	public ParticleSystem test;
 	float time = 0;
 	
-	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButtonDown(0)){
+		if(Input.GetMouseButtonDown(0) && PlayerShoot.clip > 0){
 			test.enableEmission = true;
 			time = 0.1f;
 		}
